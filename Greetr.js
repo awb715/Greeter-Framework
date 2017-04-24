@@ -1,7 +1,11 @@
 (function (global, $) {
     //Immediately invoked function
+    
+    
     var Greetr = function (firstName, lastName, language) {
         return new Greetr.init(firstName, lastName, language);
+        
+        //return new invokes new object and method call
     }
     var supportedLangs = ['en', 'es'];
     var greetings = {
@@ -74,7 +78,7 @@
                 msg = this.greeting();
             }
             
-            $(selector).html(msg);
+            $(selector).html(msg); // adds message to selector
             return this;
         }
         
@@ -85,6 +89,8 @@
             self.firstName = firstName || " ";
             self.lastName = lastName || " ";
             self.language = language || "en";
+        
+            self.validate();
         }
         //points any object created with the constructor to Greetr's prototype
     Greetr.init.prototype = Greetr.prototype;
