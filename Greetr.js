@@ -1,4 +1,4 @@
-(function (global, $) {
+;(function (global, $) {
     //Immediately invoked function
     
     
@@ -9,8 +9,8 @@
     }
     var supportedLangs = ['en', 'es'];
     var greetings = {
-        en: 'Hello'
-        , es: 'Hola'
+        en: 'Hello '
+        , es: 'Hola '
     };
     var logMessages = {
         en: 'Logged in'
@@ -33,6 +33,8 @@
             return greetings[this.language] + this.firstName + "!";
         }
         , formalGreeting: function () {
+            console.log(this.language + " lang");
+            console.log(this.fullName)
             return formalGreetings[this.language] + ',' + this.fullName;
         }
         , greet: function (formal) {
@@ -69,10 +71,12 @@
             if(!selector){
                 throw 'No jQuery selector';
             }
-            
+            console.log(formal + " formal")
             var msg;
             if(formal){
+                
                 msg = this.formalGreeting();
+                
             }
             else {
                 msg = this.greeting();

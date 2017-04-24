@@ -1,2 +1,11 @@
-var g = G$('John', 'Doe');
-console.log(g);
+
+
+
+$('#login').click(function(){
+  
+  
+     var g = Greetr('John', 'Doe');
+    g.setLang($('#lang').val()).htmlGreeting('#greeting',true);
+    
+    
+});
