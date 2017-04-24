@@ -57,6 +57,25 @@
             this.validate();
             
             return this;
+        },
+        htmlGreeting:function(selector,formal){
+            if(!$){
+                throw 'jQuery not loaded';
+            }
+            if(!selector){
+                throw 'No jQuery selector';
+            }
+            
+            var msg;
+            if(formal){
+                msg = this.formalGreeting();
+            }
+            else {
+                msg = this.greeting();
+            }
+            
+            $(selector).html(msg);
+            return this;
         }
         
     };
