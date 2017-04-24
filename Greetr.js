@@ -20,6 +20,9 @@
     //points any object created with the constructor to Greetr's prototype
     Greetr.init.prototype =Greetr.prototype;
     
+    //allows Greetr to be accessed globally
+    global.Greetr = global.G$ = Greetr;
+    
     
     
 }(window, jQuery));
